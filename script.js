@@ -16,7 +16,6 @@ const clear = document.querySelector(".clear");
 
 clear.addEventListener('click', () => {
   num1 = 0;
-  num2 = 0;
   displayValue = '';
   operator = '';
 });
@@ -25,7 +24,6 @@ const buttons = document.querySelectorAll("button");
 const output = document.querySelector('.answer');
 let displayValue = '';
 let num1 = 0;
-let num2 = 0;
 let operator = '';
 
 buttons.forEach(button => {
@@ -34,23 +32,36 @@ buttons.forEach(button => {
       displayValue += e.target.textContent
     }
     else if((/[/|*|\-|+]/).test(e.target.textContent)) {
-      operator = e.target.textContent
-
-      if(num1 == 0){
+      if(operator == '/' && displayValue == "0"){
+        output.textContent = "You have doomed us all!";
+        num1 = 0;
+        operator = '';
+        displayValue = '';
+        return;
+      }
+      else if(displayValue == '' && num1 == 0 || operator == e.target.textContent && displayValue == '') {
+        return;
+      }
+      else if(displayValue == ''){
+        operator = e.target.textContent
+        output.textContent = `${num1} ${operator}`
+        return;
+      }
+      else if(num1 == 0){
         num1 = parseFloat(displayValue)
       } else  {
         num1 = operate(num1, parseFloat(displayValue), operator)
       }
+      operator = e.target.textContent
       displayValue = '';
     }
-    
+
     else if((/[=]/).test(e.target.textContent)) {
       if(num1 == 0)return;
       displayValue = operate(num1, parseFloat(displayValue), operator);
       num1 = 0;
       operator = '';
     }
-    console.log(`${num1} ${operator} ${num2}`)
 
     if (!(/[/|*|\-|+]/).test(operator)) {
       output.textContent = displayValue;
