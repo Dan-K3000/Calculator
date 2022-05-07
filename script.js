@@ -29,6 +29,9 @@ let operator = '';
 buttons.forEach(button => {
   button.addEventListener('click', (e) => {
     if((/[0-9|.]/).test(e.target.textContent)) {
+      if(e.target.textContent == '.' && displayValue.includes(".")){
+        return;
+      }
       displayValue += e.target.textContent
     }
     else if((/[/|*|\-|+]/).test(e.target.textContent)) {
