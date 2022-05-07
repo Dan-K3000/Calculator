@@ -1,0 +1,121 @@
+body {
+  margin: 0%;
+  color: #001524;
+  background: #FFECD1;
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding: 20px;
+  background: #FF7D00;
+  box-shadow: 0px 3px 10px 5px #001524;
+  flex: 0 1 auto;
+}
+
+.footer {
+  display: flex;
+  flex: 0 1 40px;
+  justify-content: center;
+  align-items: center;
+  background: #FF7D00;
+  padding: 10px;
+}
+
+.calculatorContainer {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+.calculatorBody {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  background: #78290f;
+  height: 450px;
+  width: 340px;
+  border-radius: 8px 8px 35px 8px;
+  box-shadow: inset 0px 1px 12px 1px, 0px 2px 5px 1px;
+  padding: 20px 10px;
+}
+
+.bevel {
+  border-radius: 7px 7px 25px 7px;
+  background: #FFECD1;
+  flex: 1;
+  padding: 15px 25px;
+  display: flex;
+  box-shadow: inset 0px 1px 5px 1px, 0px -1px 2px 1px;
+}
+.screen {
+  background: #15616D;
+  flex: 1;
+  border-radius: 4px;
+  border: 2px inset;
+  box-shadow: inset 0px 1px 6px 1px, 0px -1px 3px 1px black ;
+}
+
+.buttonContainer {
+display: flex;
+justify-content: center;
+background: #FF7D00;
+border: outset 1px;
+box-shadow: inset 0px 1px 7px 1px , 0px 1px 3px 1px;
+border-radius: 7px 7px 25px 7px;
+flex-wrap: wrap;
+margin: 25px 25px 0px;
+}
+
+.button{
+  font-family: 'Koulen', cursive;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 30px;
+  text-shadow: 0px 0px 2px;
+  height: 45px;
+  width: 50px;
+  background: #FFECD1;
+  border-radius: 6px;
+  box-shadow: inset 0px -2px 3px 1px, 0px 1px 5px 2px;
+  margin: 10px;
+}
+
+.button:active {
+  transform: scale(0.98);
+  font-size: 29px;
+  border-radius: 5px;
+  box-shadow: inset 0px -1px 4px 2px, 0px 1px 5px 1px;
+}
+
+.clear{
+  border: none;
+  background: #FFECD1;
+  border-radius: 10px;
+  width: 40px;
+  height: 15px;
+  box-shadow: inset 0px -1px 6px 1px, 0px 1px 2px 1px;
+  margin-top: 15px;
+}
+
+.clear:active{
+  transform: scale(0.98);
+  box-shadow: inset 0px 1px 5px 2px, 0px 1px 1px 1px;
+}
+
+.answer {
+  font-size: 50px;
+  text-shadow: 0px 0px 3px;
+}
