@@ -1,48 +1,41 @@
 body {
-  margin: 0%;
-  height: 100%;
-  background: #DBDBDB;
+  padding: 0;
+  margin: 0;
   user-select: none;
 }
 
-.page {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
   text-shadow: 0px 0px 3px;
   font-size: 15px;
   text-decoration: underline;
   font-family: 'VT323', monospace;
   display: flex;
-  flex: 0 1 40px;
   justify-content: center;
   align-items: center;
   background: #9bbc0f;
   color: #0f380f;
   padding: 10px;
-  box-shadow: inset 0px 1px 6px 2px, 0px -1px 10px 1px;
+  box-shadow: inset 0px 0px 6px 1px, 0px 0px 10px 1px;
 }
 
 .calculatorContainer {
+  background-color: #DBDBDB;
+  min-height: 100vh;
   display: flex;
-  flex: 1 1 auto;
   align-items: center;
   justify-content: center;
-  margin: 50px;
 }
+
 .calculatorBody {
   display: flex;
   flex-direction: column;
-  align-content: space-around;
-  background: #dad6d7;
+  background-color: #dad6d7;
   width: 310px;
-  border-radius: 8px 8px 35px 8px;
-  box-shadow: inset 0px 1px 12px 1px, 0px 5px 50px 5px ;
+  border-radius: 8px 8px 35px;
+  box-shadow: inset 0px 1px 12px 1px, 0px 5px 50px 5px;
   padding: 20px 15px;
 }
 
@@ -50,8 +43,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 7px 7px 25px 7px;
-  background: #717286;
+  border-radius: 7px 7px 25px;
+  background-color: #717286;
   padding: 10px 18px 18px;
   box-shadow: inset 0px 1px 5px 1px, 0px -1px 2px 1px;
 }
@@ -61,7 +54,7 @@ body {
   margin-top: 10px;
   height: 200px;
   width: 200px;
-  background: #9bbc0f;
+  background-color: #9bbc0f;
   color: #0f380f;
   border-radius: 4px;
   border: 2px inset;
@@ -71,7 +64,7 @@ body {
 .buttonContainer {
 display: flex;
 justify-content: center;
-box-shadow: inset 0px 0px 30px 1px gray, 0px 0px 6px gray;
+box-shadow: inset 0px 0px 30px -5px gray, 0px 0px 6px gray;
 border-radius: 30px;
 flex-wrap: wrap;
 margin: 5px 5px 0px 62px;
@@ -89,22 +82,22 @@ margin: 5px 5px 0px 62px;
   text-shadow: 0px 0px 2px;
   height: 45px;
   width: 45px;
-  background: #ad1035;
+  background-color: #ad1035;
   border-radius: 50%;
-  box-shadow: inset 0px -1px 6px 1px, 0px 1px 5px 0px;
+  box-shadow: inset 0px -1px 6px 0px, 0px 1px 4px;
   margin: 7px;
 }
 
 .button:active {
   transform: scale(0.977);
   font-size: 29px;
-  box-shadow: inset 0px -1px 6px 1px, 0px 0px 4px 1px;
+  box-shadow: inset 0px -1px 6px 0px, 0px 0px 4px 1px;
 }
 
 .clear{
   cursor: pointer;
   border: none;
-  background: #717286;
+  background-color: #717286;
   border-radius: 10px;
   width: 45px;
   height: 12px;
@@ -130,7 +123,6 @@ margin: 5px 5px 0px 62px;
 .answer {
   font-family: 'VT323', monospace;
   word-wrap: break-word;
-
   font-size: 40px;
   text-shadow: 0px 0px 3px;
 }
@@ -142,16 +134,16 @@ margin: 5px 5px 0px 62px;
   gap: 3px;
 }
 
-.topLine{
+.line {
   box-shadow: 0px 0px 2px;
   border-radius: 3px;
-  background: #ad1035;
   height: 3px;
 }
 
+.topLine{
+  background-color: #ad1035;
+}
+
 .bottomLine{
-  box-shadow: 0px 0px 2px;
-  border-radius: 3px;
-  background: darkblue;
-  height: 3px;
+  background-color: darkblue;
 }

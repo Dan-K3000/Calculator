@@ -15,7 +15,7 @@ function operate(x, y, operator){
 const clear = document.querySelector(".clear");
 
 clear.addEventListener('click', () => {
-  num1 = 0;
+  numberHolder = 0;
   displayValue = '';
   operator = '';
 });
@@ -23,7 +23,7 @@ clear.addEventListener('click', () => {
 const buttons = document.querySelectorAll("button");
 const output = document.querySelector('.answer');
 let displayValue = '';
-let num1 = 0;
+let numberHolder = 0;
 let operator = '';
 
 buttons.forEach(button => {
@@ -37,39 +37,39 @@ buttons.forEach(button => {
     else if((/[/|*|\-|+]/).test(e.target.textContent)) {
       if(operator == '/' && displayValue == "0"){
         output.textContent = "You have doomed us all!";
-        num1 = 0;
+        numberHolder = 0;
         operator = '';
         displayValue = '';
         return;
       }
-      else if(displayValue == '' && num1 == 0 || operator == e.target.textContent && displayValue == '') {
+      else if(displayValue == '' && numberHolder == 0 || operator == e.target.textContent && displayValue == '') {
         return;
       }
       else if(displayValue == ''){
         operator = e.target.textContent
-        output.textContent = `${num1} ${operator}`
+        output.textContent = `${numberHolder} ${operator}`
         return;
       }
-      else if(num1 == 0){
-        num1 = parseFloat(displayValue)
+      else if(numberHolder == 0){
+        numberHolder = parseFloat(displayValue)
       } else  {
-        num1 = operate(num1, parseFloat(displayValue), operator)
+        numberHolder = operate(numberHolder, parseFloat(displayValue), operator)
       }
       operator = e.target.textContent
       displayValue = '';
     }
 
     else if((/[=]/).test(e.target.textContent)) {
-      if(num1 == 0)return;
-      displayValue = operate(num1, parseFloat(displayValue), operator);
-      num1 = 0;
+      if(numberHolder == 0)return;
+      displayValue = operate(numberHolder, parseFloat(displayValue), operator);
+      numberHolder = 0;
       operator = '';
     }
 
     if (!(/[/|*|\-|+]/).test(operator)) {
       output.textContent = displayValue;
     } else {
-      output.textContent = `${num1} ${operator} ${displayValue}`
+      output.textContent = `${numberHolder} ${operator} ${displayValue}`
     }
   })
 });
